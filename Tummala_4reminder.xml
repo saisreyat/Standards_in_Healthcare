@@ -1,0 +1,8 @@
+<note>
+    <!-- The child elements "to","from","heading","body" are not indented leading to syntax errors. Corrected version: -->
+    <to>Tove</to>
+    <!-- The element "from" is not enclosed with closing element or the matching end tag. Corrected version: -->
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+</note>

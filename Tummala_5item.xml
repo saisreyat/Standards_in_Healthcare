@@ -1,0 +1,7 @@
+<data>  
+    <items>
+        <!-- The attribute value "item" under attribute "name" and element "item" is missing a quote mark. Corrected version:-->
+        <item name="item1">item1abc</item>
+        <item name="item2">item2abc</item>
+    </items>
+</data>  

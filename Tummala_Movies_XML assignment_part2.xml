@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Lets create a root element "MOVIES" -->
+<MOVIES>
+    <!-- Creating an element "MOVIE1" for the first movie -->   
+    <MOVIE1> Ashique2 
+        <!-- Adding child elements, "YEAR","DIRECTOR","LENGTH","ACTORS" -->
+        <YEAR> 2013 </YEAR>
+        <DIRECTOR> Mohit Suri </DIRECTOR>
+        <LENGTH> 132 minutes </LENGTH>
+        <ACTORS>
+            <!-- Creating child element for "ACTORS" under element "ACTOR1" -->
+            <ACTOR1>
+                <!-- Creating elements "FIRSTNAME","LASTNAME","YEARBORN" under element "ACTOR1" -->
+                <FIRSTNAME> Aditya </FIRSTNAME>
+                <LASTNAME> Roy Kapur </LASTNAME>
+                <YEARBORN> 1985 </YEARBORN>
+            </ACTOR1>
+            <!-- Creating an element "ACTOR2" to include the second actor in the first movie -->
+            <ACTOR2>
+                <!-- Creating elements "FIRSTNAME","LASTNAME","YEARBORN" under element "ACTOR2" -->
+                <FIRSTNAME> Shraddha </FIRSTNAME>
+                <LASTNAME> Kapoor </LASTNAME>
+                <YEARBORN> 1987 </YEARBORN> 
+            </ACTOR2>
+        </ACTORS>
+    </MOVIE1>
+        <!-- Creating an element "MOVIE2" to include the details of the second movie -->
+    <MOVIE2> Sita Ramam 
+        <!-- Adding child elements, "YEAR","DIRECTOR","LENGTH","ACTORS" -->
+        <YEAR> 2022 </YEAR>
+        <DIRECTOR> Hanu Raghavapudi </DIRECTOR>
+        <LENGTH> 163 minutes </LENGTH>
+        <ACTORS>
+            <!-- Creating child element for "ACTORS" under element "ACTOR1" -->
+            <ACTOR1>
+                <!-- Creating elements "FIRSTNAME","LASTNAME","YEARBORN" under element "ACTOR1" -->
+                <FIRSTNAME> Dulquer </FIRSTNAME>
+                <LASTNAME> Salman </LASTNAME>
+                <YEARBORN> 1986 </YEARBORN>
+            </ACTOR1>
+            <!-- Creating an element "ACTOR2" to include the second actor in the second movie -->
+            <ACTOR2>
+                <!-- Creating elements "FIRSTNAME","LASTNAME","YEARBORN" under element "ACTOR2" -->
+                <FIRSTNAME> Mrunal </FIRSTNAME>
+                <LASTNAME> Thakur </LASTNAME>
+                <YEARBORN> 1992 </YEARBORN> 
+            </ACTOR2>
+        </ACTORS>
+    </MOVIE2>
+</MOVIES>

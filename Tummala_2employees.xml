@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>                     
+<!-- Here the element "Employees" must be either followed by an attribute or ">","/>". Corrected version:-->
+   <Employees>xmlns:sql="urn:schemas-microsoft-com:xml-sql"    
+      <!-- Subjective error is noticed on the lelement "sqlquery". Corrected version: -->
+      <sqlquery>                                                
+         SELECT First_Name_VC, Last_Name_VC FROM Employee_T
+            FOR XML AUTO 
+      </sqlquery>                                              
+   </Employees>
