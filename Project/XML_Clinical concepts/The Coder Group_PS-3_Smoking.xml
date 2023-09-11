@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Here the attribute typeCode with attribute value DRIV is added to represent the base of the document -->
+<!-- The attribute xmlns:xsi is added with attribute value http://www.w3.org/2001/XMLSchema-instance -->
+<entry  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!--The attribute value OBS is assigned for classCode to describe the observation and attribute value EVN is given to attribute moodCode as the event had already occured -->
+    <observation classCode="OBS" moodCode="EVN">
+        <templateId root="2.16.840.1.113883.10.20.22.4.78"/>
+        <templateId root="2.16.840.1.113883.10.20.22.4.78"  extension="2014-06-09"/>
+        <id extension="123456789" root="2.16.840.1.113883.19" />
+        <!-- The attribute code has value 72166-2 to describe the code for tobacco smoking in LOINC. The attribute values for attributes codeSystem, displayName is changed to 2.16.840.1.113883.6.1, and Tobacco smoking status respectively to describe the smoking.   .  -->
+        <code code="72166-2" codeSystem="2.16.840.1.113883.6.1" displayName="Tobacco smoking status"/>
+        
+            
+        
+        <!-- The statusCode element with attribute code has an attribute value completed in the given case and describes the event status-->
+        <statusCode code="completed"/>
+        <!-- The effectiveTime value here represents the exact timestamp of the observation recorded and the attribute value is specified. -->
+        <effectiveTime value="20221105153045-0500"/>
+            <!-- Added the element low with attribute value and attribute value 2015 to represent the start of the habit. -->
+            <low value="2015" />
+        <!-- The value here includes the coded values from appropriate vocabulary to represent the social item. In this case, we have used SNOMED-CT as the codeSystemName with code 428071000124103  -->	
+        <!-- CD is the attribute value for xsi:type as the event can be coded, 2.16.840.1.113883.6.96 is the changed attribute value for codeSystem to represent the SNOMED-CT, attribute value for codeSystemName is SNOMED-CT with corresponding code as 428071000124103 and attribute value for displayName is  Heavy tobacco smoke.    -->
+        <value xsi:type="CD" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+            code="428071000124103" displayName="Heavy tobacco smoke"/>
+        <author>
+            <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+            <time value="20221105153045-0500"/>
+            <assignedAuthor>
+                <id root="2.16.840.1.113883.4.6" extension="99999999"/>
+                <!-- Root means NPI number. -->
+                <code code="200000000X" codeSystem="2.16.840.1.113883.6.101"
+                    displayName="Allopathic and Osteopathic Physicians"/>
+                <!-- Adding the element addr to specify the address details of the author -->
+                <addr>
+                    <!-- Adding element content Avion Dr to element streetAddressLine to specify the address details of the author  -->
+                    <streetAddressLine>Avion Dr.</streetAddressLine>
+                    <!-- Indianapolis is the element content for the element city to specify the address details of the author-->
+                    <city>Indianapolis</city>
+                    <!-- IN is the element content for the element state to specify the address details of the author-->
+                    <state>IN</state>
+                    <!-- 46208 is the element content for the element postalCode to specify the address details of the author-->
+                    <postalCode>46208</postalCode>
+                    <!-- The element content US is added for the element country to specify the address details of the author -->
+                    <country>US</country>
+                </addr>
+                <!-- Changing the contact information of the author by changing the attribute value for value to tel:+1(950)123-4567 to specify the contact details of the author -->
+                <telecom use="WP" value="tel:+1(950)123-4567"/>
+                <assignedPerson>
+                    <name>
+                        <!-- Assigning appropriate details like the given name, and family name to the author. -->
+                        <!-- Madhav is the element content for element given to name the assigned person-->
+                        <given>Madhav</given>
+                        <!-- Jasti is the element content for the element family to name the assigned person -->
+                        <family>Jasti</family>
+                    </name>
+                </assignedPerson>
+            </assignedAuthor>
+        </author>
+    </observation>
+</entry>
+
+<!-- References:
+1. HL7 International. (n.d.).Current smoking status. HL7 C-CDA example search. https://cdasearch.hl7.org/examples/view/Social%20History/Current%20Smoking%20Status
+2. IHE. (n.d.). CDA entry content modules. https://wiki.ihe.net/index.php/CDA_Entry_Content_Modules#Social_History_Observation_1.3.6.1.4.1.19376.1.5.3.1.4.13.4
+3. OpenHIE. (n.d.). Mood codes. https://wiki.ohie.org/display/SUB/Mood+Codes
+4. Symedical viewpoint. (n.d.). IIS Windows Server. https://edu.symedical.com/SymedicalIUSOICViewpoint/#/term;catalogMnemonic=SYM_SNO_INT_USEXT;catalogName=SNOMED%20CT%20US%20Edition;name=Heavy%20tobacco%20smoker;termUID=5be3ab26-238c-11e2-b4a2-402cf421c1e9;code=428071000124103;isRetired=false
+ -->

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is the CDA document for Chest X Ray when the results are interpretted by the radiologist -->
+
+<!-- Here the attribute typeCode with value DRIV is added to represent the heart of the document -->
+<!-- The attribute xmlns:xsi is added with attribute value http://www.w3.org/2001/XMLSchema-instance -->
+<entry typeCode="DRIV" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <organizer>
+        <component>
+            <!--Here the attribute value for attribute classCode is OBS as the results of Chest X ray are observed and attribute value for attribute moodCode is EVN as the event had occured already.  -->
+            <observation classCode="OBS" moodCode="EVN">
+                <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+                <templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+                <!-- Results Observation -->
+                <id root="e1aa44dd-6f39-2f5c-b267-897c3824b563"/>
+                <code code="36643-5" displayName="Chest X-ray 2 Views" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                    <!-- a translation code may be helpful and used by some EHRs to denote that this is a textual response of result impression -->
+                </code>
+                
+                <statusCode code="completed"/>
+                <!-- This is the timestamp of biologically relevance (i.e. when chest x-ray was performed), aligning with HL7 v3 modeling. -->
+                <effectiveTime value="20150225091059-0500"/>
+                <value xsi:type="ED">
+                    <reference value="#Result1OriginalText" />
+                </value>
+                <author>
+                    <!-- This is the timestamp of when the author (i.e. the radiologist) interpreted the chest x-ray-->
+                    <time value="20150225103206-0500"/>
+                    <assignedAuthor>
+                        <id extension="66666" root="2.16.840.1.113883.4.6"/>
+                        <code code="111NR0200X" codeSystem="2.16.840.1.113883.6.101" codeSystemName="NUCC" displayName="Radiology"/>
+                        <addr>
+                            <!-- Content of the element streetAddressLine is changed to NewYork St. to add details of the author -->
+                            <streetAddressLine>NewYork St.</streetAddressLine>
+                            <!-- Content of the element city is changed to Indianapolis to add details of the author -->
+                            <city>Indianapolis</city>
+                            <!-- Content of the element state is changed to IN to add details of the author -->
+                            <state>IN</state>
+                            <!-- Content of the element postalCode is changed to 45678 to add details of the author -->
+                            <postalCode>45678</postalCode>
+                            <country>US</country>
+                        </addr>
+                        <!-- The attribute value of the attribute value is changed to tel:+1(317)987-2678 to add the mobile number of the author. -->
+                        <telecom value="tel:+1(317)987-2678" use="WP"/>
+                        <assignedPerson>
+                            <name>
+                                <!-- Content of the element given is changed to Praneeth. to add details of the author -->
+                                <given>Praneeth</given>
+                                <!-- Content of the element family is changed to Tummala to add details of the author -->
+                                <family>Tummala</family>
+                                <suffix>MD</suffix>
+                            </name>
+                        </assignedPerson>
+                    </assignedAuthor>
+                </author>
+            </observation>
+        </component>
+    </organizer>
+</entry>
+
+<!-- References:
+1. HL7 International. (n.d.). Results radiology with image narrative. HL7 C-CDA example search. https://cdasearch.hl7.org/examples/view/Results/Results%20Radiology%20with%20Image%20Narrative
+2. IHE. (n.d.). CDA entry content modules. https://wiki.ihe.net/index.php/CDA_Entry_Content_Modules#Procedure_Entry_1.3.6.1.4.1.19376.1.5.3.1.4.19
+3. OpenHIE. Mood codes. (n.d.). https://wiki.ohie.org/display/SUB/Mood+Codes
+4. Symedical viewpoint. (n.d.). IIS Windows Server. https://edu.symedical.com/SymedicalIUSOICViewpoint/#/term;catalogMnemonic=SYM_SNO_INT_USEXT;catalogName=SNOMED%20CT%20US%20Edition;name=Plain%20chest%20X-ray;termUID=5b78890c-238c-11e2-b4a2-402cf421c1e9;code=399208008;isRetired=false
+-->

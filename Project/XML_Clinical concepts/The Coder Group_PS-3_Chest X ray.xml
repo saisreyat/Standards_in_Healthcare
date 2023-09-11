@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This is the CDA document for Chest X Ray when the Radiologist performs the procedure -->
+
+<!-- The entry is the base for any type of record -->
+<!-- The attribute xmlns:xsi is added with attribute value http://www.w3.org/2001/XMLSchema-instance -->
+<entry typeCode="DRIV" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- moodCode is ENV as the procedure is laready performed on the patient and the classCode is PROC as this is a procedure  -->  
+    <procedure moodCode="EVN" classCode="PROC">
+        <templateId root="2.16.840.1.113883.10.20.22.4.14" />
+        <templateId root="2.16.840.1.113883.10.20.22.4.14" extension="2014-06-09"/>
+        <id root="56a76ee2-c5a9-4c69-be93-0461bd98691c"/>
+        <!-- Here the code describes the specific code for Plain Chest X ray in SNOMED_CT terminology with accurate with accurate display name mentioned below. -->
+        <code code="399208008" displayName="Plain chest X-ray (procedure)"
+            codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT">
+        </code>  
+               
+        <!--As the procedure is completed and the results are interpreted by the radiologist, the statusCode is set to be completed.-->
+        <statusCode code="completed"/>
+        <!-- Effective times type is chosen to be TS as it specifies the point-in-time which is appropriate for laboratory procedures. The low and the high values are the specific times recorded. -->
+        <effectiveTime xsi:type="TS">
+            <!-- The attribute value has attribute value added 20221105103012-0700 representing the lowest possible time recorded in the patient chart and EHR. -->
+            <low value="20221105103012-0700"/>
+            <!-- The attribute value has added attribute value as 20221106101545-0700 to represent the most delayed time to complete the procedure. -->
+            <high value="20221106101545-0700"/>
+        </effectiveTime>
+        <!-- Element author has been added to specify the details of the corresponding author. -->
+        
+    </procedure>
+</entry>
+
+<!-- References:
+1. HL7 International. (n.d.). Procedures section procedure entry - Colonoscopy. HL7 C-CDA Example Search. https://cdasearch.hl7.org/examples/view/Procedures/Procedures%20Section%20Procedure%20Entry%20-%20Colonoscopy
+2. IHE. (n.d.). CDA entry content modules. https://wiki.ihe.net/index.php/CDA_Entry_Content_Modules#Procedure_Entry_1.3.6.1.4.1.19376.1.5.3.1.4.19
+3. OpenHIE. (n.d.). Mood codes. https://wiki.ohie.org/display/SUB/Mood+Codes
+4. Symedical viewpoint. (n.d.). IIS Windows Server. https://edu.symedical.com/SymedicalIUSOICViewpoint/#/term;catalogMnemonic=SYM_SNO_INT_USEXT;catalogName=SNOMED%20CT%20US%20Edition;name=Plain%20chest%20X-ray;termUID=5b78890c-238c-11e2-b4a2-402cf421c1e9;code=399208008;isRetired=false-->

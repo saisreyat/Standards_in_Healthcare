@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Here we have added the attribute typeCode and its value DRIV as the entry forms the base for any CDA document -->
+<!-- The attribute xmlns:xsi is added with attribute value http://www.w3.org/2001/XMLSchema-instance -->
+<entry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- classCode is the attribute for act with value ACT and moodCode is another attribute with value EVN as the event(cough) had already occurred. -->
+    <act classCode="ACT" moodCode="EVN">
+        <templateId root="2.16.840.1.113883.10.20.22.4.3" />
+        <templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01"/>
+        <id root="102ca2e9-884c-4523-a2b4-1b6c3469c397"/>
+        
+        <code code="CONC" codeSystem="2.16.840.1.113883.5.6"/>
+        
+        
+        <statusCode code="active"/>
+        <!-- Added attribute 'value' and its value is '20221104094523-0500' to represent the problem when recorded in EHR -->
+        <effectiveTime value = "20221104094523-0500">
+            <!-- This is the time when the problem was recorded in the patient chart. The attribute 'value' has a value of 20221104094523-0500-->
+            <low value="20221104094523-0500"/>
+            <!-- The element high is added to effectiveTime and has attribute 'value' with 20221105103027-0500 as its value to represent the value when the cheif complaint was last updated. .-->
+            <high value="20221105103027-0500" />
+        </effectiveTime>
+        <!-- The attribute value is changed to REFR to indicate the clinical status of the problem(cough) if it is active, resolved, or in remission.  -->
+        <entryRelationship typeCode="REFR">
+            <!-- The attribute values for classCode and moodCode remain the same as this is an observation of a problem and the event had already occured. -->
+            <observation classCode="OBS" moodCode="EVN">
+                <templateId root="2.16.840.1.113883.10.20.22.4.4" />
+                <templateId root="2.16.840.1.113883.10.20.22.4.4" extension="2015-08-01"/>
+                <id extension="10241104348" root="1.3.6.1.4.1.22812.4.111.0.4.1.2.1"/>
+                <!-- The attribute value for attribute 'Code' is changed to 409586006 and displayName attribute value is changed to Complaint to represent the chief complaint of cough. -->
+                <code code="409586006" displayName="Complaint"
+                    codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                    
+                    
+                        
+                </code>
+                
+                    
+                
+                <statusCode code="completed"/>
+                <!-- Effective time -->
+                <!-- The attribute value has attribute value added as to represent the biological onset of the symptom and often coincides with low value. -->
+                <effectiveTime value = "20140227">
+                    <!-- This represents the date of biological onset. -->
+                    <low value="20140227"/>
+                    <!-- An element high is added with attribute value and there is no attribute value assigned as the complaint is not yet resolved. -->
+                    <high value=""/>
+                </effectiveTime>
+                <!-- This represents the date of biological onset and the attribute value of 'value' is changed to 20221010. -->
+                <!-- The attribute value for codeSystemName is SNOMED CT and  Cough is the attribute value for attribute displayName -->
+                <value xsi:type="CD" code="49727002" codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMED CT" displayName="Cough"/>
+                <author>
+                    <templateId root="2.16.840.1.113883.10.20.22.4.119"/>
+                    <time value="20140302124536"/>
+                    <assignedAuthor>
+                        <id extension="66666" root="2.16.840.1.113883.4.6"/>
+                        <code code="207RC0000X" codeSystem="2.16.840.1.113883.6.101"
+                            codeSystemName="NUCC" displayName="Cardiovascular Disease"/>
+                        <addr>
+                            <!-- The content of the element streetAddressLine is changed to Dr.MLK Jr St. to match the author's details  -->
+                            <streetAddressLine>Dr.MLK Jr St.</streetAddressLine>
+                            <!-- The content of the element city is changed to Indianapolis to match the author's details   -->
+                            <city>Indianapolis</city>
+                            <!-- The content of the element state is changed to IN to match the author's details -->
+                            <state>IN</state>
+                            <!-- The element content of postalCode is changed to 46202 to match the author's details  -->
+                            <postalCode>46202</postalCode>
+                            <country>US</country>
+                        </addr>
+                        <!-- The attribute value is changed to tel:+1(317)666-0006 of 'value' to match the details -->
+                        <telecom value="tel:+1(317)666-0006" use="WP"/>
+                        <assignedPerson>
+                            <name>
+                                <!-- The element content of 'given' is changed to Raashi to assign a given name to the provider -->
+                                <given>Raashi</given>
+                                <!-- The element content of 'family' is changed to Khanna to assign a family name to the provider -->
+                                <family>Khanna</family>
+                                <suffix>MD</suffix>
+                            </name>
+                        </assignedPerson>
+                    </assignedAuthor>
+                </author>
+            </observation>
+        </entryRelationship>
+    </act>
+</entry>
+
+<!-- References:
+1. HL7 International. (n.d.). Active problem. HL7 C-CDA Example Search. https://cdasearch.hl7.org/examples/view/Problems/Active%20Problem
+2. IHE. (n.d.). CDA entry content modules. https://wiki.ihe.net/index.php/CDA_Entry_Content_Modules#Problem_Entry_1.3.6.1.4.1.19376.1.5.3.1.4.5
+3. OpenHIE. (n.d.). Mood codes. https://wiki.ohie.org/display/SUB/Mood+Codes
+4. Symedical viewpoint. (n.d.). IIS Windows Server. https://edu.symedical.com/SymedicalIUSOICViewpoint/#/term;catalogMnemonic=SYM_SNO_INT_USEXT;catalogName=SNOMED%20CT%20US%20Edition;name=Cough;termUID=6553c5ae-238c-11e2-b4a2-402cf421c1e9;code=49727002;isRetired=false -->
